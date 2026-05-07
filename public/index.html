@@ -7,11 +7,15 @@
 <body>
     <div class="ui container">
         <div class="ui raised padded segment">
-            <h2 class="ui center aligned header">
-                <a id="video-link" href="https://youtube.com/@binary_soup" target="_blank">Test Question (key=foobar)</a>
-            </h2>
+            <div class="ui segment">
+                <h2 class="ui center aligned header">
+                    <a id="video-link" href="https://youtube.com/@binary_soup" target="_blank">Test Question (key=foobar)</a>
+                </h2>
+            </div>
             <div class="ui divider"></div>
-            <div class="ui teal inverted padded segment">
+            <h2 id="question" class="ui center aligned header"></h2>
+            <h4 id="my-answer" class="ui center aligned header"></h4>
+            <div id="center-pane" class="ui inverted padded segment">
                 <h1 id="cipher" class="ui center aligned header">YVWT ZX O QLJGHJOE?</h1>
                 <h2 class="ui center aligned icon header">
                     <i id="arrow-icon" class="arrow alternate circle down icon white"></i>
@@ -29,7 +33,7 @@
                             <input id="key-input" type="text" placeholder="Enter Key">
                         </div>
                         <div class="three wide field">
-                            <div id="decode-button" class="fluid ui large blue labeled icon submit button">
+                            <div id="decode-button" class="fluid ui large teal labeled icon submit button">
                                 <i class="key icon"></i>
                                 DECODE
                             </div>
