@@ -21,13 +21,12 @@ def vigenere(input, key, decrypt=False):
 import argparse
 parser = argparse.ArgumentParser(
     prog = 'Vigenere',
-    description = 'Encrypt/Decrypt using a vigenere cypher',
+    description = 'Encrypt/Decrypt using a vigenere cipher',
 )
 
-parser.add_argument('input', help='The input text (plain or cypher)')
-parser.add_argument('key', help='The key to use in the cypher')
+parser.add_argument('input', help='The input text (plain or cipher)')
+parser.add_argument('key', help='The key to use in the cipher')
 parser.add_argument('-d', '--decrypt', action='store_true', help="Perform decryption") 
 
 args = parser.parse_args()
-print(-6 % 26)
 print(vigenere(args.input, args.key, args.decrypt))

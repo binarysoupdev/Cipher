@@ -3,7 +3,7 @@ body {
     align-items: center;
     height: 100vh;
 
-    background-color:slategrey;
+    background-color:whitesmoke;
 }
 
 #plain-segment {
@@ -20,4 +20,8 @@ body {
 
 #links {
     margin-bottom: -15px;
+}
+
+#center-pane {
+    background-color: #ff8848;
 }

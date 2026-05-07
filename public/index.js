@@ -5,6 +5,8 @@ const keyField = document.getElementById("key-field");
 const plainSegment = document.getElementById("plain-segment");
 const arrowIcon = document.getElementById("arrow-icon");
 const videoLink = document.getElementById("video-link");
+const question = document.getElementById("question");
+const myAnswer = document.getElementById("my-answer");
 const hintInput = document.getElementById("hint-input");
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -18,10 +20,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     const cipher = ciphers[video];
 
-    cipherText.textContent = cipher.question;
+    cipherText.textContent = cipher.ciphertext;
     hintInput.value = cipher.hint;
-    videoLink.textContent = cipher.title;
+    videoLink.textContent = `"${cipher.title}"`;
     videoLink.href = 'https://youtu.be/' + video;
+
+    if ("question" in cipher) {
+        question.textContent = cipher.question;
+        myAnswer.textContent = "The Answer"
+    }
 });
 
 document.getElementById("key-form").addEventListener("submit", function(event) {
@@ -43,6 +50,10 @@ keyInput.addEventListener("input", function(event) {
 function decode() {
     const key = keyInput.value;
     keyInput.value = '';
+
+    if (key == "") {
+        return
+    }
 
     plainSegment.classList.add("loading");
     keyField.classList.add("disabled");
